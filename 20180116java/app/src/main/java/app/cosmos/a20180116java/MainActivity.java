@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import app.cosmos.a20180116java.BottomSheetExam.BottomSheetExamActivity;
 import app.cosmos.a20180116java.DataOrTimeExam.DatePickerExamActivity;
 import app.cosmos.a20180116java.DataOrTimeExam.TimePickerExamActivity;
 import app.cosmos.a20180116java.Exam.AnimationExamActivity;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     Button DateBtn;
     Button TimeBtn;
     Button moneyUnitBtn;
+    Button BottomSheet_btn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         gird_btn = (Button) findViewById(R.id.gird_btn);
         DateBtn = (Button) findViewById(R.id.DateBtn);
         TimeBtn = (Button) findViewById(R.id.TimeBtn);
+        BottomSheet_btn = (Button) findViewById(R.id.BottomSheet_btn);
         moneyUnitBtn = (Button) findViewById(R.id.moneyUnitBtn);
         next_btn.setOnClickListener(new View.OnClickListener(){
 
@@ -234,6 +237,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), MoneyUnitActivity.class));
+            }
+        });
+        BottomSheet_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), BottomSheetExamActivity.class));
             }
         });
     }
