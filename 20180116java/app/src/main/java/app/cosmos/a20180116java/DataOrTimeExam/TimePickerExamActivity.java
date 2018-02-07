@@ -90,7 +90,7 @@ public class TimePickerExamActivity extends AppCompatActivity {
                 * DialogFragment를 TimePickerFragment() 클래스로부터 객체인 newfragment를 생성한다.
                 * 다이얼로그인 newfragment.show()를 통해서 다이얼로그를 띄운다.
                 * 타입은 DialogFragment이지만, TimePickerFragment()로부터 만들었기 때문에
-                * TimePicker가 다이얼로그 형태로 화면에 보여진다. 
+                * TimePicker가 다이얼로그 형태로 화면에 보여진다.
                 * */
                 DialogFragment newfragment = new TimePickerFragment();
                 newfragment.show(getSupportFragmentManager(),"timePicker");
