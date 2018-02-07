@@ -14,6 +14,7 @@ import app.cosmos.a20180116java.Exam.DialogExamActivity;
 import app.cosmos.a20180116java.Exam.ExamActivity;
 import app.cosmos.a20180116java.Exam.FragmentExamActivity;
 import app.cosmos.a20180116java.Exam.Main3Activity;
+import app.cosmos.a20180116java.Exam.MoneyUnitActivity;
 import app.cosmos.a20180116java.Exam.OrientationActivity;
 import app.cosmos.a20180116java.Exam.ProgressExamActivity;
 import app.cosmos.a20180116java.Exam.ToastExamActivity;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     Button gird_btn;
     Button DateBtn;
     Button TimeBtn;
+    Button moneyUnitBtn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         gird_btn = (Button) findViewById(R.id.gird_btn);
         DateBtn = (Button) findViewById(R.id.DateBtn);
         TimeBtn = (Button) findViewById(R.id.TimeBtn);
+        moneyUnitBtn = (Button) findViewById(R.id.moneyUnitBtn);
         next_btn.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -225,6 +228,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), TimePickerExamActivity.class));
+            }
+        });
+        moneyUnitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MoneyUnitActivity.class));
             }
         });
     }
