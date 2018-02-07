@@ -19,6 +19,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<SixViewHolder> {
     public ArrayList<MainListData> mainListDatas;
     public View.OnClickListener clickListener;
 
+    /*FIXME
+    *생성자를 통해서 초기화를 진행*/
     public RecyclerAdapter(ArrayList<MainListData> mainListDatas, View.OnClickListener clickListener)
     {
         this.mainListDatas = mainListDatas;
@@ -28,6 +30,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<SixViewHolder> {
     /*FIXME
     RefreshAdapter 느낌이다.
     다시 갱신해주는 어답터
+    처음에는 데이터가 없는데 setAdapter를 통해서 갱신을 하니까
+    받은 데이터를 넣어서 초기화해주고
+    notifyDataSetChanged()를 호출한다.
+    그러면 첫 호출이기 때문에 onCreateViewHolder,onBindViewHolder에서 하는 과정이 일어나는 것 같다.
     * */
     public void setAdapter(ArrayList<MainListData> mainListDatas)
     {

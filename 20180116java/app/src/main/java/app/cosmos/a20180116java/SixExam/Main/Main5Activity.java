@@ -53,8 +53,8 @@ public class Main5Activity extends AppCompatActivity  implements SwipeRefreshLay
         networkService = ApplicationController.getInstance().getNetworkService();
         // 서비스 객체 초기화
 
-        refreshLayout.setOnRefreshListener(this);
-        Six_recyclerView.setHasFixedSize(true);
+        refreshLayout.setOnRefreshListener(this); // 리스너를 달아줌
+        Six_recyclerView.setHasFixedSize(true); // 고정
 
         // 레이아웃 매니저 초기화
         mlinearLayoutManager = new LinearLayoutManager(this);
@@ -76,18 +76,28 @@ public class Main5Activity extends AppCompatActivity  implements SwipeRefreshLay
         이러한 이유로 아래 쪽에 onRestart()를 오버라이드하여 메인 액티비티가 재 실행 되는 경우에
         onRestart() 안에서 리스트를 갱신한다.
         * */
-        Call<MainResult> requestMainData = networkService.getMainResult();
-        requestMainData.enqueue(new Callback<MainResult>() {
+
+        /*FIXME
+          Call<MainResult> 타입의 responseMainData를
+        * networkService의 getMainResult() 함수를 호출할 수 있도록 초기화시켜준다.
+        * 그리고 responseMainData.enqueue를 통해서 통신부를 작성한다.
+        * */
+        Call<MainResult> responseMainData = networkService.getMainResult();
+        responseMainData.enqueue(new Callback<MainResult>() {
+            // 통신 성공시
             @Override
             public void onResponse(Call<MainResult> call, Response<MainResult> response) {
                 if(response.isSuccessful())
                 {
+                    // 성공하면 respone의 body에 있는 results 값을
+                    // mDatas에 담는다.
+                    // 그리고 mDatas를 어답터에 넣어주면서 갱신을 한다.
                     mDatas = response.body().results;
                     recyclerAdapter.setAdapter(mDatas);
                 }
 
             }
-
+            //통신 실패시
             @Override
             public void onFailure(Call<MainResult> call, Throwable t) {
                 Log.v("Fail",t.getMessage());
@@ -131,21 +141,25 @@ public class Main5Activity extends AppCompatActivity  implements SwipeRefreshLay
     /*FIXME
     onRestart() 메소드를 오버라이드 하여
     onPause() -> onRestart() 시 리스트를 갱신하는 ListReload() 메소드 호출
+    처음 메인 액티비티가 화면에 보였다가 사라지고 나서 다시 메인 액티비티가 화면에 나타날 때를 위의 생명주기로 설명할 수 있다.
+    화면에 메인 액티비티가 나타나면 onRestart() 호출되므로 여기서 재통신을 하는 통신부를 작성하면 된다.
     * */
     @Override
     protected void onRestart() {
         super.onRestart();
         ListReload();
+        // ListReload()라는 재통신 함수 호출
     }
     /*FIXME
     리스트를 감싸고 있는 SwipeRefreshLayout을 당기면 갱신되는 메소드이다.
     implements SwipeRefreshLayout.OnRefreshListener 와
     xml에서 리스트를 감싸는 SwipeRefreshLayout 가 필요합니다!!
+    그리고 onCreate() 안에서 리스너를 달아줘야한다.
     * */
     @Override
     public void onRefresh() {
         ListReload();
-        refreshLayout.setRefreshing(false);
+        refreshLayout.setRefreshing(false); // 새로고침 애니메이션이 나타났다가 사라지도록 하기 위해서 false로 지정
         Toast.makeText(getApplicationContext(),"페이지 갱신",Toast.LENGTH_SHORT).show();
 
     }
@@ -155,6 +169,7 @@ public class Main5Activity extends AppCompatActivity  implements SwipeRefreshLay
     * 서버와 재통신을 하는 부분이다.
     * */
     public void ListReload()
+    // 재통신을 하는 부분이지만, 원래 통신을 하는 부분과 똑같다.
     {
         Call<MainResult> requestMainData = networkService.getMainResult();
         requestMainData.enqueue(new Callback<MainResult>() {
