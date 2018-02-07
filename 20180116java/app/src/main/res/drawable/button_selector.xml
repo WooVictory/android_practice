@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@color/colorPrimary"/>
+    <!--state_focused 속성은 포커스가 있는지를 확인하고
+        state_pressed 속성은 눌렸는지를 확인하므로 -->
+
+    <item
+        android:state_focused="false"
+        android:state_pressed="true"
+        android:drawable="@color/colorPrimary"/>
+
+
+    <item
+        android:drawable="@color/colorPrimaryDark"/>
+    <!--두가지 속성이 false일 때는 기본 색상으로 지정-->
+</selector>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.cosmos.a20180116java.LoginActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/soptlogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"/>
+
+
+    <TextView
+        android:id="@+id/textIdLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:layout_marginLeft="30dp"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:layout_alignBaseline="@+id/loginId"
+        android:layout_alignBottom="@+id/loginId"
+        android:layout_alignEnd="@+id/textIdPwd" />
+
+    <EditText
+        android:id="@+id/loginId"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textIdLogin"
+        android:layout_below="@+id/logo"/>
+    <TextView
+        android:id="@+id/textIdPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pwd:"
+        android:layout_below="@+id/textIdLogin"
+        android:layout_marginLeft="30dp"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:id="@+id/loginPwd"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textIdPwd"
+        android:layout_toEndOf="@+id/textIdPwd"
+        android:inputType="date"/>
+
+    <Button
+        android:layout_below="@+id/loginPwd"
+        android:id="@+id/loginBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:text="login"/>
+
+
+    <Button
+        android:layout_below="@+id/loginPwd"
+        android:layout_toRightOf="@+id/loginBtn"
+        android:id="@+id/signBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="signup"/>
+</RelativeLayout>

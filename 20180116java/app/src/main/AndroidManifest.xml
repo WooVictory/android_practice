@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="app.cosmos.a20180116java">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".FontExam.ApplicationController"
+        android:allowBackup="true"
+        android:icon="@drawable/star"
+        android:label="Practice"
+        android:roundIcon="@drawable/star"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".CalActivity" />
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".ImageSelectActivity" />
+        <activity android:name=".ImageResultActivity" />
+        <activity android:name=".SpinnerActivity" />
+        <activity android:name=".SpinnerResultActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".Three.BasicListViewActivity" />
+        <activity android:name=".Three.Custom.CustomListViewActivity" />
+        <activity android:name=".Three.Recycler.RecyclerViewActivity" />
+        <activity android:name=".Level1.Level1RecyclerActivity" />
+        <activity android:name=".Level2.Level2RecyclerActivity" />
+        <activity android:name=".Level3.Level3RecyclerActivity" />
+        <activity android:name=".Exam.ExamActivity" />
+        <activity android:name=".Exam.FocusExamActivity" />
+        <activity
+            android:name=".Exam.OrientationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".Exam.ToastExamActivity" />
+        <activity android:name=".Exam.DialogExamActivity" />
+        <activity android:name=".Exam.ProgressExamActivity" />
+        <activity android:name=".Exam.AnimationExamActivity" />
+        <activity android:name=".Exam.PageSlidingExamActivity" />
+        <activity android:name=".Exam.FragmentExamActivity" />
+        <activity android:name=".Exam.Main3Activity" />
+        <activity android:name=".Four.FragmentActivity" />
+        <activity android:name=".Four.ViewPager.ViewPagerActivity" />
+        <activity android:name=".MenuExam.MenuActivity" />
+        <activity android:name=".FontExam.FontExamActivity" />
+        <activity android:name=".FontExam.Main4Activity" />
+        <activity android:name=".SixExam.Detail.DetailActivity" />
+        <activity android:name=".SixExam.Main.Main5Activity" />
+        <activity android:name=".SixExam.Register.RegisterActivity" />
+        <activity android:name=".TabExam.TabExamActivity" />
+        <activity android:name=".WebViewExam.WebViewActivity" />
+        <activity android:name=".Spinner2Activity" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".DataOrTimeExam.DatePickerExamActivity" />
+        <activity android:name=".DataOrTimeExam.PickerResultActivity" />
+        <activity android:name=".DataOrTimeExam.TimePickerExamActivity"></activity>
+    </application>
+
+</manifest>

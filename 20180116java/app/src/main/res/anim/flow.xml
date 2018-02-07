@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="100%p"
+        android:toXDelta="0%p"
+        android:duration="6000"
+        android:repeatCount="2"/>
+    <!--위치 이동을 위한 애니메이션 액션 정의-->
+    <!--FIXME
+    translate 태그는 뷰나 기타 구성 요소가 위치 이동을 하도록 만드는 액션 정보
+    x축 어디서부터 이동할 것인지 그리고 x축 어디까지 이동할 것인지를 지정
+    100%부터 0%까지 이동한다고 되어 있으니 뷰의 오른쪽 끝 지점에서 왼쪽 끝 지점까지 이동하는 것을 의미한다.
+    duration은 애니메이션이 지속되는 시간을 말하며 6000은 6초를 의미한다.
+    repeatCount는 반복될 횟수를 지정하는데 여기서는 3번 반복된다.
+    -->
+
+    <alpha
+        android:fromAlpha="0.5"
+        android:toAlpha="1"
+        android:duration="6000"
+        android:repeatCount="2"/>
+
+    <!--투명도 변경을 위한 애니메이션 액션 정의-->
+
+
+
+</set>

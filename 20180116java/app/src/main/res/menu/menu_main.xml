@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_search"
+        android:title="Search"
+        app:showAsAction="always|withText"
+        android:actionLayout="@layout/search_layout"
+        android:orderInCategory="101"/>
+    <!--xml로 만든 레이아웃을 액션바에 넣어서 보여주려면 액션바에 추가된 메뉴 아이템 중 하나가
+    화면에 보일 때 이 레이아웃이 보이도록 설정하면 된다.
+    메뉴가 화면에 보여질 때의 레이아웃을 설정 - > 속성 : actionLayout
+    -->
+    <item android:id="@+id/menu_refresh"
+        android:title="새로고침"
+        android:icon="@drawable/refresh"
+        app:showAsAction="withText"
+        android:orderInCategory="102"/>
+    <item android:id="@+id/menu_settings"
+        android:title="설정"
+        android:icon="@drawable/settings"
+        app:showAsAction="never"
+        android:orderInCategory="103"/>
+
+</menu>

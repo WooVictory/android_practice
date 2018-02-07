@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.cosmos.a20180116java.SpinnerActivity">
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/country_arrays"
+        android:prompt="@string/country_prompt"
+        android:forceHasOverlappingRendering="false"/> <!--그 위에 친구는 스피너에 출력되는 자료를 연결하는 속성
+        여기는 스피너에 표시되는 제목-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="출생년도"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="출생년도"
+            android:layout_weight="1"/>
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="출생년도"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="submit"/>
+</LinearLayout>

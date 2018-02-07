@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.cosmos.a20180116java.HomeActivity">
+
+    <Button
+        android:id="@+id/basic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="basic"/>
+    <Button
+        android:id="@+id/custom_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/basic_btn"
+        android:text="custom"/>
+    <Button
+        android:id="@+id/recycler_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/custom_btn"
+        android:text="recycler"/>
+    <Button
+        android:id="@+id/level1_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/recycler_btn"
+        android:text="level1"/>
+    <Button
+        android:id="@+id/level2_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/custom_btn"
+        android:layout_below="@+id/level1_btn"
+        android:text="level2"/>
+
+    <Button
+        android:id="@+id/level3_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/custom_btn"
+        android:layout_below="@+id/level2_btn"
+        android:text="level3"/>
+</RelativeLayout>
