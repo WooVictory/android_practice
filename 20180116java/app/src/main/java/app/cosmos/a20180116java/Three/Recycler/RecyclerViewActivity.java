@@ -3,6 +3,7 @@ package app.cosmos.a20180116java.Three.Recycler;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -67,6 +68,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements SwipeRefr
         // refresh_recycler에 리스너를 달아준다.
         refresh_recycler.setOnRefreshListener(this);
         refresh_recycler.setColorSchemeResources(R.color.colorAccent);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getApplicationContext(),new LinearLayoutManager(this).getOrientation());
+        recycler_view.addItemDecoration(new VerticalSpaceItemDecoration(48));
 
     }
 
