@@ -83,6 +83,8 @@ public class RegisterActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 text_length.setText(String.valueOf(s.length())+"/500");
                 // 텍스트가 변화하는 중간 중간 값이 바뀌어야 하므로 여기서 설정한다.
+                // 입력되는 텍스트는 변화하는 중이므로 여기서 코드를 작성
+                // 입력되는 텍스트의 길이를 가져와서 텍스트뷰에 표시한다.
 
             }
 
@@ -129,6 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                     RequestBody title = RequestBody.create(MediaType.parse("multipart/form-data"),inputTitleEdit.getText().toString());
                     RequestBody content = RequestBody.create(MediaType.parse("multipart/form-data"),inputContentEdit.getText().toString());
                     RequestBody writer = RequestBody.create(MediaType.parse("multipart/form-data"),inputWriterEdit.getText().toString());
+                    // 이미지를 제외한 다른 데이터를 RequestBody 타입에 맞게 변환하는 과정이다.
 
                     MultipartBody.Part body;
 
@@ -137,6 +140,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }else {
                         /*FIXME
                         이미지를 리사이징하는 부분
+                        이미지의 크기가 크면 메모리를 너무 많이 차지하기 때문에
+                        리사이징을 통해서 메모리를 줄이고 해상도를 유지할 수 있도록 한다.
                         * */
 
                         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -173,6 +178,8 @@ public class RegisterActivity extends AppCompatActivity {
                             {
                                 if(response.body().message.equals("save"))
                                 {
+                                    // 여기서는 글을 등록하는 것이기 때문에
+                                    // 서버로 데이터를 보내고 성공 메시지를 받기만 하면 된다. 
                                     Log.v("성공","성공");
                                     finish();
                                 }
@@ -207,7 +214,9 @@ public class RegisterActivity extends AppCompatActivity {
                 try {
 
                     String nameStr = getImageNameToUri(data.getData());
+                    // MediaStore.Images.Media.EXTERNAL_CONTENT_URI 이거를 가지고와서 getImageNameToUri 함수에 넣어준다.
                     ImageName.setText(nameStr);
+                    // 위의 함수 호출을 통해서 가져온 이미지 파일의 이름을 텍스트 뷰에 설정한다.
                     this.data = data.getData();
 
                 }catch (Exception e)
@@ -216,6 +225,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
             else{
+                // resultCode가 RESULT_OK가 아니면 이미지 파일이 존재하지 않는다는 것이므로
+                // 텍스트 뷰를 공백으로 -> 이미지가 없다는 것을 의미함.
                 imgUrl = "";
                 ImageName.setText("");
             }
