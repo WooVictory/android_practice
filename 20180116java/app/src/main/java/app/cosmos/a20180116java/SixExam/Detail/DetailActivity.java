@@ -42,7 +42,7 @@ public class DetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         networkService = ApplicationController.getInstance().getNetworkService();
-        // 네트워크 서비스 초기화
+        // 네트워크 서비스 초기화 꼭 필요한 작업임!!
 
         // 넘어 온 아이디값 전달 받기
         Intent intent = getIntent();
@@ -67,6 +67,8 @@ public class DetailActivity extends AppCompatActivity {
     public void Networking()
     {
         Call<DetailResult> requestDetail = networkService.getDetailResult(id);
+        // Main 액티비티에서 넘어 온 id 값을 서버로 넘겨서 통신을 진행한다.
+        // 받을 때는 DetailResult 타입의 형태로 받겠다는 것!!!
         requestDetail.enqueue(new Callback<DetailResult>() {
             @Override
             public void onResponse(Call<DetailResult> call, Response<DetailResult> response) {
@@ -75,6 +77,11 @@ public class DetailActivity extends AppCompatActivity {
                     titleTextView.setText("제목 :"+response.body().result.title);
                     writerTextView.setText(response.body().result.username);
                     contentTextView.setText("내용 :"+response.body().result.content);
+                    /*FIXME
+                    값들을 받아서 텍스트뷰에 뿌려준다.
+                    그리고 서버에서 받아온 이미지가 null이 아니면 즉, 값이 존재하면
+                    Glide를 통해서 이미지를 imgView에 넣어준다.
+                    * */
 
                     if(response.body().result.image !="")
                     {
