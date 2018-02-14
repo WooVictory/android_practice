@@ -38,6 +38,8 @@ public interface NetworkService {
                                              @Part("username")RequestBody writer,
                                              @Part("title")RequestBody title,
                                              @Part("content")RequestBody contents);
+    // 이미지를 보내야 하기 때문에 Multipart를 통해서
+    // 각각을 RequestBody 객체로 감싸서 보낸다. String을!!!!
 
 
 }
