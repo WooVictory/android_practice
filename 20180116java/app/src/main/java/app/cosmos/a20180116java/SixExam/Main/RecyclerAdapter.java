@@ -53,7 +53,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<SixViewHolder> {
     @Override
     public void onBindViewHolder(SixViewHolder holder, int position) {
         holder.VH_MainList_title.setText(mainListDatas.get(position).title);
-        holder.VH_MainList_writer.setText(mainListDatas.get(position).username);
+        holder.VH_MainList_writer.setText(mainListDatas.get(position).writer);
+        holder.VH_MainList_date.setText(mainListDatas.get(position).written_time);
+        holder.VH_MainList_count.setText(mainListDatas.get(position).view_number+ " ");
 
     }
 
