@@ -11,4 +11,5 @@ public class MainResult {
     // Response 모델
     public ArrayList<MainListData> results;
     // MainListData 타입의 ArrayList results
+    public String message;
 }
