@@ -179,7 +179,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if(response.body().message.equals("save"))
                                 {
                                     // 여기서는 글을 등록하는 것이기 때문에
-                                    // 서버로 데이터를 보내고 성공 메시지를 받기만 하면 된다. 
+                                    // 서버로 데이터를 보내고 성공 메시지를 받기만 하면 된다.
                                     Log.v("성공","성공");
                                     finish();
                                 }
