@@ -22,6 +22,14 @@ public class SixViewHolder extends RecyclerView.ViewHolder {
     public TextView VH_MainList_date;
     @BindView(R.id.MainList_count)
     public TextView VH_MainList_count;
+    // 메인 리스트
+
+    @BindView(R.id.Comment_writer)
+    public TextView VH_Comment_writer;
+    @BindView(R.id.Comment_content)
+    public TextView VH_Comment_content;
+    @BindView(R.id.Comment_written_time)
+    public TextView VH_Comment_written_time;
 
     public SixViewHolder(View itemView) {
         super(itemView);
@@ -31,6 +39,12 @@ public class SixViewHolder extends RecyclerView.ViewHolder {
         VH_MainList_writer = itemView.findViewById(R.id.MainList_writer);
         VH_MainList_date = itemView.findViewById(R.id.MainList_date);
         VH_MainList_count = itemView.findViewById(R.id.MainList_count);
+        // 메인 리스트
+
+        VH_Comment_writer = itemView.findViewById(R.id.Comment_writer);
+        VH_Comment_content = itemView.findViewById(R.id.Comment_content);
+        VH_Comment_written_time = itemView.findViewById(R.id.Comment_written_time);
+        // 댓글 리스트
     }
 
     public TextView getVH_MainList_writer() {
