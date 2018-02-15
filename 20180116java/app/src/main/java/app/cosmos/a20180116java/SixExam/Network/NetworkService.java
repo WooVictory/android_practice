@@ -1,11 +1,14 @@
 package app.cosmos.a20180116java.SixExam.Network;
 
+import app.cosmos.a20180116java.SixExam.Detail.CommentInfo;
+import app.cosmos.a20180116java.SixExam.Detail.CommentResult;
 import app.cosmos.a20180116java.SixExam.Detail.DetailResult;
 import app.cosmos.a20180116java.SixExam.Main.MainResult;
 import app.cosmos.a20180116java.SixExam.Register.RegisterResult;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -24,13 +27,16 @@ public interface NetworkService {
     *PUT : 정보를 업데이트하기 위해서 사용
     *DELETE : 정보를 삭제하기 위해서 사용
     **/
-    @GET("/")
+    @GET("/lists")
     Call<MainResult> getMainResult();
     // getMainResult()라는 함수를 호출하고
     // 서버로부터 정보(응답)를(을) 받을 때는 Call을 호출하고 MainResult 형태로 받겠다.
 
-    @GET("/{id}")
+    @GET("/lists/{id}")
     Call<DetailResult> getDetailResult(@Path("id") String id);
+
+    @GET("/lists/{id}")
+    Call<CommentResult> getCommentResult(@Path("id") String id, @Body CommentInfo commentInfo);
 
     @Multipart
     @POST("/")
