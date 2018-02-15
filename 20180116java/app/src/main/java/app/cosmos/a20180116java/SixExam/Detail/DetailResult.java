@@ -13,6 +13,7 @@ public class DetailResult {
     public class ResultData{
         public DetailData post;
         public ArrayList<CommentData> comment;
+
     }
 
     class DetailData{
@@ -26,6 +27,10 @@ public class DetailResult {
         public String writer;
         public String written_time;
         public String content;
+        // 통신할 때 사용하고, 리사이클러뷰에 데이터를 뿌릴 때도 사용한다.
+        // 통신할 때 사용하는 데이터 클래스와 리사이클러뷰에 포함될 item_list의 데이터 클래스는 같아야 한다.
+        // 그래야 통신할 때 편함.
+
     }
 }
 
