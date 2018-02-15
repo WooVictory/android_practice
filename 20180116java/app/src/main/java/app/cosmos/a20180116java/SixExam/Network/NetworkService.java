@@ -35,7 +35,11 @@ public interface NetworkService {
     @GET("/lists/{id}")
     Call<DetailResult> getDetailResult(@Path("id") String id);
 
-    @GET("/lists/{id}")
+    /*FIXME
+    * 댓글을 등록하는 부분이므로 서버에 데이터를 보내야한다.
+    * 그래서 POST 메소드를 사용한다.
+    * */
+    @POST("/lists/{id}")
     Call<CommentResult> getCommentResult(@Path("id") String id, @Body CommentInfo commentInfo);
 
     @Multipart
