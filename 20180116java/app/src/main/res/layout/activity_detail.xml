@@ -147,7 +147,7 @@
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:id="@+id/commnet_writer_edit"
+                    android:id="@+id/comment_writer_edit"
                     android:hint="댓글 작성자"
                     />
 
@@ -159,7 +159,7 @@
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
-                    android:id="@+id/commnet_content_edit"
+                    android:id="@+id/comment_content_edit"
                     android:hint="댓글: 내용"
                     />
             </LinearLayout>
