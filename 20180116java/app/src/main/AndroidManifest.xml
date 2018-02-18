@@ -68,7 +68,8 @@
         <activity android:name=".DataOrTimeExam.PickerResultActivity" />
         <activity android:name=".DataOrTimeExam.TimePickerExamActivity" />
         <activity android:name=".Exam.MoneyUnitActivity" />
-        <activity android:name=".BottomSheetExam.BottomSheetExamActivity"></activity>
+        <activity android:name=".BottomSheetExam.BottomSheetExamActivity" />
+        <activity android:name=".EightExam.RecyclerActivity"></activity>
     </application>
 
 </manifest>
