@@ -15,6 +15,11 @@ import butterknife.OnClick;
  */
 
 public class eight_FooterViewHolder extends RecyclerView.ViewHolder{
+    /*FIXME
+    eight_recyclerview_footer에 있는 뷰들의 id를 가지고 와서 객체화시킨다.
+    ViewHolder는 res 폴더에 존재하는 View에서 id를 가지고 와서 보관할 수 있다.
+    그래서 객체화시켜서 view들한테 접근할 수 있도록 해준다.
+    * */
     @BindView(R.id.eight_comment_writer_edit)
     EditText writer_edit;
     @BindView(R.id.eight_comment_content_edit)
@@ -25,9 +30,10 @@ public class eight_FooterViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         ButterKnife.bind(this,itemView);
 
-        writer_edit = (EditText) itemView.findViewById(R.id.eight_comment_writer_edit);
-        content_edit = (EditText) itemView.findViewById(R.id.eight_comment_content_edit);
-        eight_commentBtn = (Button) itemView.findViewById(R.id.eight_commentBtn);
+
+        writer_edit = (EditText) itemView.findViewById(R.id.eight_comment_writer_edit); // 작성자 이름
+        content_edit = (EditText) itemView.findViewById(R.id.eight_comment_content_edit); // 댓글 내용
+        eight_commentBtn = (Button) itemView.findViewById(R.id.eight_commentBtn); // 등록 버튼
 
     }
     @OnClick(R.id.eight_commentBtn)

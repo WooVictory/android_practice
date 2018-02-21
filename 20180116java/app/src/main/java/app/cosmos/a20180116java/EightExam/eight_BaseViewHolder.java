@@ -13,6 +13,10 @@ import butterknife.ButterKnife;
  */
 
 public class eight_BaseViewHolder extends RecyclerView.ViewHolder {
+    /*FIXME
+    * eight_recyclerview_item에 있는 뷰의 id를 가져온다.
+    * 그리고 여기서 객체로 할당하고 있다.
+    * */
     @BindView(R.id.eight_writer_text)
     TextView eight_writer_text;
     @BindView(R.id.eight_content_text)

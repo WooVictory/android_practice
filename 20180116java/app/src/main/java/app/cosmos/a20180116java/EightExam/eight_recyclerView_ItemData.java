@@ -5,10 +5,10 @@ package app.cosmos.a20180116java.EightExam;
  */
 
 public class eight_recyclerView_ItemData {
-    String writer;
-    String content;
+    String writer; // 작성자
+    String content; // 댓글 내용
     public eight_recyclerView_ItemData(String writer, String content)
-    {
+    { // 생성자
         this.writer = writer;
         this.content = content;
     }
