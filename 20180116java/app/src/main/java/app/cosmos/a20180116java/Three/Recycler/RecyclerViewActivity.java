@@ -1,7 +1,9 @@
 package app.cosmos.a20180116java.Three.Recycler;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -78,7 +80,26 @@ public class RecyclerViewActivity extends AppCompatActivity implements SwipeRefr
         @Override
         public void onClick(View view) {
             final int position = recycler_view.getChildPosition(view);
-            Toast.makeText(getApplicationContext(), (position+1) + "번 리스트", Toast.LENGTH_SHORT).show();
+            final AlertDialog.Builder dialog = new AlertDialog.Builder(RecyclerViewActivity.this);
+            dialog.setMessage("해당 항목을 삭제하시겠습니까?");
+            dialog.setCancelable(true);
+            dialog.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    itemDatas_recycler.remove(position);
+                    recyclerAdapter.notifyDataSetChanged();
+                }
+            });
+
+            dialog.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Toast.makeText(getApplicationContext(), (position+1) + "번 리스트", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+            AlertDialog alert = dialog.create();
+            alert.show();
         }
     };
 
